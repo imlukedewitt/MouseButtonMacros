@@ -4,7 +4,7 @@ AutoHotKey script to navigate Windows using extra mouse buttons and the scroll w
 Run as administrator for allow functionality in elevated applications.
 
 # Button 1 (Closest to user)
- - **Hold + scroll**: Scroll between Windows Desktops (Ctrl + Win + Up/Down)
+ - **Hold + scroll**: Scroll between Windows Desktops (Ctrl + Win + Left/Right)
  - **Double click & hold + scroll**: Application-dependent actions:
 	 - **Chrome**: Change tabs
 	 - **Visual Studio Code**: Change tabs
