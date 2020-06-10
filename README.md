@@ -7,6 +7,8 @@ Run as administrator for allow functionality in elevated applications.
  - **Hold + scroll**: Scroll between Windows Desktops (Ctrl + Win + Left/Right)
  - **Double click & hold + scroll**: Application-dependent actions:
 	 - **Chrome**: Change tabs
+	 - **Firefox**: Change tabs
+	 - **Windows Terminal**: Change tabs
 	 - **Visual Studio Code**: Change tabs
 	 - **Telegram Messenger**: Change conversations
  
