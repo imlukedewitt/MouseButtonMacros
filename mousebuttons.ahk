@@ -54,12 +54,12 @@ Button1Double(scroll)
     send {ctrl down}{lwin down}
 }
 
-; send date on ddate
+; send date on 'ddate'
 ::ddate::
 SendInput, %A_YYYY%-%A_MM%-%A_DD%
 return
 
-; send powershell functions to run as admin
+; send domain suffix on '.wwork'
 ::.wwork::
 SendInput, .workstation.mssu.edu
 return
