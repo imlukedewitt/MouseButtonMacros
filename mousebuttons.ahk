@@ -37,14 +37,14 @@ return
 Button1Double(scroll)
 {
     send {ctrl up}{lwin up}
-    if WinActive("Google Chrome") or WinActive("Visual Studio Code")
+    if WinActive("Google Chrome") or WinActive("Visual Studio Code") or WinActive("Mozilla Firefox")
     {
         if (scroll = "down")
             send ^{PgDn}
         if (scroll = "up")
             send ^{PgUp}
     }
-    if WinActive("Telegram")
+    if WinActive("Telegram") or WinActive("ahk_exe WindowsTerminal.exe")
     {
         if (scroll = "down")
             send ^{Tab}
@@ -60,35 +60,6 @@ SendInput, %A_YYYY%-%A_MM%-%A_DD%
 return
 
 ; send powershell functions to run as admin
-::rrunass::
-SendRaw,
-(
-function RunAsAdmin
-{
-    # Usage:
-    # if (!(RunAsAdmin)) { Exit }
-
-    $adminaccess = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')
-    if ($adminaccess) { return $true}
-    $argList = @("-NoLogo -ExecutionPolicy Bypass -File $(Get-UNCPath -Quotes)" )
-    Start-Process Powershell.exe -Verb Runas -ArgumentList $argList
-    exit 0
-}
-
-function Get-UNCPath
-{
-    param ( [switch]$ScriptRoot, [switch]$Quotes )
-
-    $path = $script:MyInvocation.MyCommand.Path
-    if ($path.contains([io.path]::VolumeSeparatorChar))
-    {
-        $psDrive = Get-PSDrive -Name $path.Substring(0,1) -PSProvider FileSystem
-        if ($psDrive.DisplayRoot) { $path = $path.Replace($psDrive.Name + [io.path]::VolumeSeparatorChar, $psDrive.DisplayRoot) }
-    }
-
-    if ($ScriptRoot) { $path = $path.Replace([io.path]::DirectorySeparatorChar + $script:MyInvocation.MyCommand.Name, "") }
-    if ($Quotes) { $path = '"' + $path + '"' }
-    return $path
-}
-)
+::.wwork::
+SendInput, .workstation.mssu.edu
 return
