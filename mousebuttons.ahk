@@ -63,3 +63,21 @@ return
 ::.wwork::
 SendInput, .workstation.mssu.edu
 return
+
+; leap mode (inspired by vim mode)
+~CapsLock::Toggle := !Toggle
+
+F12::MsgBox, %Toggle%
+
+#If Toggle
+
+*j::Left
+*l::Right
+*i::Up
+*k::Down
+*u::Home
+*o::End
+*h::PgUp
+*`;::PgDn
+
+#If
