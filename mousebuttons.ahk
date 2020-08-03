@@ -60,14 +60,12 @@ SendInput, %A_YYYY%-%A_MM%-%A_DD%
 return
 
 ; send domain suffix on '.wwork'
-::.wwork::
+:?:.wwork::
 SendInput, .workstation.mssu.edu
 return
 
 ; leap mode (inspired by vim mode)
 ~CapsLock::Toggle := !Toggle
-
-F12::MsgBox, %Toggle%
 
 #If Toggle
 
@@ -81,3 +79,16 @@ F12::MsgBox, %Toggle%
 *`;::PgDn
 
 #If
+
+; enter timesheet when you type 'ttime'
+::ttime::
+Send, 08:00 AM
+Send, {Tab}
+Send, 01:00 PM
+Send, {Tab}
+Send, {Enter}
+Sleep, 300
+Send, 02:00 PM
+Send, {Tab}
+Send, 05:00 PM
+return
