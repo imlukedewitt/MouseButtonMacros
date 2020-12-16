@@ -32,7 +32,6 @@ if (doubleTapButton1 = 1)
     Button1Double("up")
 return
 
-
 ; first button double tap + wheel action decider
 Button1Double(scroll)
 {
@@ -63,6 +62,10 @@ return
 :?:.wwork::
 SendInput, .workstation.mssu.edu
 return
+
+; tomcat check script
+^!+t::
+SendRaw, for i in $(seq 1 10)`; do service tomcat$i status 2>/dev/null | awk -v i=$i `'/not running/{print "\033[31mTomcat" i " is not running\033[0m"} /is running/{print "\033[32mTomcat" i " is running\033[0m"}`'`; sleep 0.1`; done
 
 ; leap mode (inspired by vim mode)
 ~CapsLock::Toggle := !Toggle
