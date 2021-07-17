@@ -2,7 +2,7 @@
 
 AutoHotKey script to navigate Windows using extra mouse buttons and the scroll wheel, replacing the built-in "browser back" and "browser forward" functions
 
-Run as administrator for allow functionality in elevated applications.
+Run as administrator to allow functionality in elevated applications.
 
 # Button 1 (Closest to user)
 
